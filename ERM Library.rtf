@@ -1,0 +1,82 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2512
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\fs24 \cf0 LIBRARY ERM - drawing\
+\
+\
+medium( (PK) medium_ID:int(15), medium_type:varchar(50), medium_title:varchar(100), medium_orig_title:varchar(100), medium_language:varchar(30), medium_orig_language(30), is_borrowable:bool, (FK) subject_area_name:varchar(30) )\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 medium_author( (PK) medium_ID:int(15), author_ID:int(15) )\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 author( (PK) author_ID:int(15), author_name:varchar(50)\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 publisher( (PK) publisher_ID:int(15), publisher_name:varchar(50) )\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 storage( (PK) shelf_ID:int(15), shelf_designation:varchar(50) )\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 subjectarea( (PK) subject_area_ID:int(15), subject_area_name )\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 inventory ( (PK) inventory_ID:int(15), (FK) medium_ID:int(15), (FK) self_designation:varchar(50) )\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 medium_inventory( (PK) medium_ID:int(15), inventory_ID:int(15) )\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 keyword( (PK) keyword_ID:int(15), keyword_entry:varchar(50) )\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 medium_keyword( (PK) medium_ID:int(15), keyword_entry:varchar(50) )\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 journal( (PK) medium_ID:int(15), medium_type:varchar(50) )\
+\
+\
+article( (PK) article_ID:int(15), medium_ID:int(15) )\
+\
+\
+article_ref( (PK) article_ID:int(15), article_ID:int(15) )\
+\
+\
+inventoryprocessing( (PK) processing_ID:int(15), (FK) inventory_ID:int(15), is_inhouse:bool, is_reserved:bool, issued_by:int(15), collected_by:int(15) )\
+\
+\
+employee( (PK) employee_ID:int(15), employee_name:varchar(50) )\
+\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 proc_emp( (PK) employee_ID:int(15), processing_ID:int(15) )\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+}
